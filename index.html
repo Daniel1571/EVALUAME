@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EvaluaME - Plataforma CBTIS 122</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>EvaluaME</h1>
+    <p>“Tu opinión mejora nuestra escuela”</p>
+  </header>
+
+  <section id="loginSection" class="card">
+    <h2>Iniciar sesión con correo institucional</h2>
+    <form id="loginForm">
+      <input type="email" id="correoLogin" placeholder="Correo institucional" required>
+      <button type="submit">Ingresar</button>
+    </form>
+  </section>
+
+  <section id="sugerenciasSection" class="card" style="display:none;">
+    <h2>Piensa, propone y mejora</h2>
+
+    <label>Grado</label>
+    <select class="grado" id="gradoSugerencia" required>
+      <option value="">Selecciona</option>
+    </select>
+
+    <label>Grupo</label>
+    <select class="grupo" id="grupoSugerencia" required>
+      <option value="">Selecciona</option>
+    </select>
+
+    <form id="sugerenciasForm">
+      <textarea id="mensaje" placeholder="Escribe tus comentarios o sugerencias" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <section id="encuestaSection" class="card" style="display:none;">
+    <h2>Encuesta mensual</h2>
+
+    <label>Grado</label>
+    <select class="grado" id="gradoEncuesta" required>
+      <option value="">Selecciona</option>
+    </select>
+
+    <label>Grupo</label>
+    <select class="grupo" id="grupoEncuesta" required>
+      <option value="">Selecciona</option>
+    </select>
+
+    <form id="encuestaForm">
+      
+      <label>1. Evalúa tu experiencia general del mes</label>
+      <select id="sentimiento" required>
+        <option value="">Selecciona</option>
+        <option value="0">0 - Muy mala</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Excelente</option>
+      </select>
+
+      <label>2. Evalúa el ambiente en tu grupo y clases</label>
+      <select id="ambiente" required>
+        <option value="">Selecciona</option>
+        <option value="0">0 - Muy malo</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Excelente</option>
+      </select>
+
+      <label>3. ¿Ocurrió alguna situación relevante este mes? (opcional)</label>
+      <textarea id="situaciones" placeholder="Describe lo sucedido..."></textarea>
+
+      <label>4. ¿Has sufrido acoso o bullying? (opcional)</label>
+      <textarea id="bullying" placeholder="Si deseas, cuéntanos tu experiencia..."></textarea>
+
+      <button type="submit">Enviar encuesta</button>
+    </form>
+  </section>
+
+  <section id="evalDocenteSection" class="card" style="display:none;">
+    <h2>Evaluación al docente</h2>
+
+    <label>Grado</label>
+    <select class="grado" id="gradoDocente" required>
+      <option value="">Selecciona</option>
+    </select>
+
+    <label>Grupo</label>
+    <select class="grupo" id="grupoDocente" required>
+      <option value="">Selecciona</option>
+    </select>
+
+    <form id="evalDocenteForm">
+
+      <input type="text" id="nombreDocente" placeholder="Nombre del docente" required>
+      <input type="text" id="materiaDocente" placeholder="Materia" required>
+
+      <label>Calidad al explicar</label>
+      <select id="explicar" required>
+        <option value="">Selecciona</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label>Cumplimiento de horarios</label>
+      <select id="horarios" required>
+        <option value="">Selecciona</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label>Trato a los estudiantes</label>
+      <select id="trato" required>
+        <option value="">Selecciona</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label>Dominio del tema</label>
+      <select id="dominio" required>
+        <option value="">Selecciona</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <button type="submit">Enviar evaluación</button>
+    </form>
+  </section>
+
+  <section id="ambienteEscolarSection" class="card" style="display:none;">
+    <h2>Evaluación del ambiente escolar</h2>
+
+    <label>Grado</label>
+    <select class="grado" required>
+      <option value="">Selecciona</option>
+    </select>
+
+    <label>Grupo</label>
+    <select class="grupo" required>
+      <option value="">Selecciona</option>
+    </select>
+
+    <form id="ambienteEscolarForm">
+
+      <label>Ambiente en el grupo</label>
+      <select id="ambGrupo" required>
+        <option value="">Selecciona</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label>Respeto entre compañeros</label>
+      <select id="respeto" required>
+        <option value="">Selecciona</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label>Ambiente en talleres / laboratorios</label>
+      <select id="talleres" required>
+        <option value="">Selecciona</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label>Seguridad dentro del plantel</label>
+      <select id="seguridad" required>
+        <option value="">Selecciona</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <button type="submit">Enviar evaluación</button>
+    </form>
+  </section>
+
+  <section id="servicioEscolarSection" class="card" style="display:none;">
+    <h2>Evaluación del servicio escolar</h2>
+
+    <label>Grado</label>
+    <select class="grado" required>
+      <option value="">Selecciona</option>
+    </select>
+
+    <label>Grupo</label>
+    <select class="grupo" required>
+      <option value="">Selecciona</option>
+    </select>
+
+    <form id="servicioEscolarForm">
+
+      <label>Prefectura</label>
+      <select id="prefectura" required>
+        <option value="">Selecciona</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label>Control escolar</label>
+      <select id="controlEscolar" required>
+        <option value="">Selecciona</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label>Biblioteca</label>
+      <select id="biblioteca" required>
+        <option value="">Selecciona</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label>Servicios médicos</label>
+      <select id="medicos" required>
+        <option value="">Selecciona</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label>Vigilancia / Entrada y salida</label>
+      <select id="vigilancia" required>
+        <option value="">Selecciona</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <button type="submit">Enviar evaluación</button>
+    </form>
+  </section>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="main.js"></script>
+  <script src="grupos.js"></script>
+
+</body>
+</html>
